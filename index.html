@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#2b1a3d"><link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg">
+<title>Still I Rise – Maya Angelou</title>
+<style>
+:root{--ink:#2b1a3d;--bg:#efeaf4;--tx:#1f1a2b;--gold:#e89b1c;--teal:#1e6f78;--rose:#9c3d54;--card:#fff}
+*{box-sizing:border-box}html{scroll-padding-top:60px}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.65 'Noto Sans Bengali','Nirmala UI',Kalpurush,system-ui,sans-serif;padding-bottom:calc(70px + env(safe-area-inset-bottom,0px))}
+header{background:var(--ink);color:#fff;padding:calc(10px + env(safe-area-inset-top,0px)) 14px 10px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:5}
+header h1{font:700 18px Georgia,serif;margin:0}header small{display:block;color:#d9c8e8;font-size:12px}
+.lang button{background:none;border:1px solid #8c74a8;color:#fff;padding:3px 9px;font-size:13px;cursor:pointer}
+.lang button:first-child{border-radius:6px 0 0 6px}.lang button:last-child{border-radius:0 6px 6px 0}
+.lang button.on{background:var(--gold);color:#2b1a3d;border-color:var(--gold)}
+main{max-width:720px;margin:auto;padding:12px}
+section{display:none}section.on{display:block}
+nav{position:fixed;bottom:0;left:0;right:0;background:var(--ink);display:flex;padding-bottom:env(safe-area-inset-bottom,0px);z-index:6}
+nav button{flex:1;background:none;border:0;color:#cdbce0;padding:9px 2px;font-size:12px;cursor:pointer;border-top:3px solid transparent}
+nav button b{display:block;font-size:19px;font-weight:400}nav button.on{color:#fff;border-top-color:var(--gold)}
+button:focus-visible,summary:focus-visible,.w:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.poem{background:linear-gradient(180deg,#2b1a3d 0%,#4a2158 30%,#7a3463 65%,#9c3d54 100%);color:#fff;border-radius:14px;padding:18px 16px 26px;border-bottom:5px solid var(--gold)}
+.poem h2{font:700 26px Georgia,serif;margin:0}.poem .au{color:#f3d9a4;margin:0 0 12px}
+.hint{font-size:13px;color:#e6d6f2;margin:0 0 14px}
+.st{margin:0 0 20px;font:19px/1.75 Georgia,'Times New Roman',serif}.st .ln{display:block}
+.st .bn{font:15px/1.7 'Noto Sans Bengali','Nirmala UI',sans-serif;color:#f6e8c8;margin:6px 0 0;border-left:3px solid var(--gold);padding-left:9px}
+.w{cursor:pointer;border-bottom:1px dotted #d9b3e8;border-radius:3px}.w:hover,.w.sel{background:var(--gold);color:#2b1a3d;border-color:transparent}
+#sheet{position:fixed;left:0;right:0;bottom:calc(58px + env(safe-area-inset-bottom,0px));background:#fff;border-top:4px solid var(--gold);box-shadow:0 -4px 18px rgba(0,0,0,.25);padding:12px 16px;transform:translateY(130%);transition:transform .2s;z-index:7;max-height:45vh;overflow:auto}
+#sheet.on{transform:none}#sheet h3{margin:0;font:700 22px Georgia,serif;color:var(--ink)}#sheet .m{font-size:20px;color:var(--rose);font-weight:700}#sheet .n{font-size:14px;color:#444;margin-top:4px}
+#sheet .x{position:absolute;right:10px;top:8px;border:0;background:#eee;border-radius:50%;width:30px;height:30px;font-size:16px;cursor:pointer}
+.c{background:var(--card);border-radius:12px;padding:14px 16px;margin:0 0 12px;border-left:5px solid var(--teal)}
+.c h3{margin:0 0 6px;font:700 18px Georgia,serif;color:var(--ink)}.c p{margin:6px 0}
+.en{font-family:Georgia,serif}.bn{font-family:'Noto Sans Bengali','Nirmala UI',sans-serif}
+.c .bn{color:#3d2a55}.c .en{color:#222}
+h2.t{font:700 22px Georgia,serif;color:var(--ink);margin:6px 0 10px}
+.tl{border-left:3px solid var(--rose);margin:0 0 12px 8px;padding-left:14px}.tl p{margin:0 0 10px}.tl b{color:var(--rose)}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;font-size:14px;margin-bottom:12px}
+th,td{padding:7px 9px;border-bottom:1px solid #e3dbee;text-align:left;vertical-align:top}th{background:var(--ink);color:#fff}
+.sc{overflow-x:auto}
+details{background:#fff;border-radius:12px;margin:0 0 10px;border-left:5px solid var(--gold)}
+summary{padding:12px 14px;cursor:pointer;font-weight:600;list-style:none}summary::-webkit-details-marker{display:none}
+summary i{font-style:normal;background:var(--ink);color:#fff;border-radius:10px;padding:1px 8px;font-size:12px;margin-left:6px}
+.ans{padding:0 14px 12px}.ans p{margin:6px 0}
+body.l-en .bn:not(.st .bn):not(.keep){display:none}body.l-bn .en{display:none}
+body.l-en .st .bn{display:none}
+@media (prefers-reduced-motion:reduce){#sheet{transition:none}}
+</style></head><body class="l-both">
+<header><div><h1>Still I Rise</h1><small>Maya Angelou · Class XI · Realm of English (B)</small></div>
+<div class="lang" role="group" aria-label="Language"><button data-l="en">EN</button><button data-l="both" class="on">EN+বাং</button><button data-l="bn">বাং</button></div></header>
+<main>
+<section id="poem" class="on">
+<div class="poem"><h2>Still I Rise</h2><p class="au">Maya Angelou</p>
+<p class="hint">Tap any word for its Bengali meaning. তুমি যে-কোনো শব্দে ট্যাপ করলে বাংলা অর্থ দেখতে পাবে।</p>
+<div id="pt"></div></div>
+<div class="c" style="margin-top:12px"><h3>In one line · এক লাইনে</h3><p class="en">A proud, defiant voice answers oppression with confidence, humour and hope, and speaks for a whole people rising from slavery.</p><p class="bn">একটি গর্বিত, অপরাজেয় কণ্ঠ নিপীড়নের জবাব দেয় আত্মবিশ্বাস, রসবোধ ও আশা দিয়ে — আর কথা বলে দাসত্ব থেকে উঠে আসা পুরো একটি জাতির হয়ে।</p></div>
+</section>
+
+<section id="bg">
+<h2 class="t">Historical background · ঐতিহাসিক পটভূমি</h2>
+<div class="c"><h3>The poet · কবি</h3>
+<p class="en">Maya Angelou (1928–2014), born Marguerite Annie Johnson in St. Louis, Missouri, was a poet, memoirist and civil rights activist who worked with Martin Luther King Jr. and Malcolm X. Her memoir <i>I Know Why the Caged Bird Sings</i> (1969) made her famous. She recited “On the Pulse of Morning” at President Clinton’s 1993 inauguration and received the Presidential Medal of Freedom in 2010.</p>
+<p class="bn">মায়া অ্যাঞ্জেলো (১৯২৮–২০১৪) মিসৌরির সেন্ট লুইসে মার্গারিট অ্যানি জনসন নামে জন্মগ্রহণ করেন। তিনি কবি, স্মৃতিকথাকার ও নাগরিক অধিকার আন্দোলনের কর্মী; মার্টিন লুথার কিং জুনিয়র ও ম্যালকম এক্স-এর সঙ্গে কাজ করেছেন। <i>I Know Why the Caged Bird Sings</i> (১৯৬৯) তাঁকে খ্যাতি দেয়। ১৯৯৩-এ ক্লিনটনের শপথ অনুষ্ঠানে কবিতা পাঠ করেন এবং ২০১০-এ প্রেসিডেন্সিয়াল মেডাল অব ফ্রিডম পান।</p></div>
+<div class="c"><h3>The poem · কবিতাটি</h3>
+<p class="en">“Still I Rise” appeared in her 1978 collection <i>And Still I Rise</i>. It grew out of a country shaped by slavery, segregation and the struggle for civil rights, and it also answers the stereotypes attached to Black women.</p>
+<p class="bn">“Still I Rise” প্রকাশিত হয় ১৯৭৮ সালের কাব্যগ্রন্থ <i>And Still I Rise</i>-এ। দাসপ্রথা, বর্ণবৈষম্য ও নাগরিক অধিকার সংগ্রামে গড়া আমেরিকার প্রেক্ষাপটে এটি লেখা; কৃষ্ণাঙ্গ নারীদের ওপর চাপানো গৎবাঁধা ধারণারও এটি জবাব।</p></div>
+<div class="tl">
+<p><b>1619</b> — First enslaved Africans brought to Virginia. · ভার্জিনিয়ায় প্রথম ক্রীতদাস আফ্রিকানদের আনা হয়।</p>
+<p><b>1863–65</b> — Emancipation Proclamation; 13th Amendment ends slavery. · দাসপ্রথার অবসান।</p>
+<p><b>c.1877–1960s</b> — Jim Crow laws enforce segregation. · জিম ক্রো আইনে বর্ণবিচ্ছিন্নতা।</p>
+<p><b>1954–68</b> — Civil Rights Movement; Civil Rights Act (1964), Voting Rights Act (1965). · নাগরিক অধিকার আন্দোলন।</p>
+<p><b>1978</b> — “Still I Rise” published. · কবিতাটির প্রকাশ।</p></div>
+<div class="c"><h3>Why history matters in the lines · পঙ্‌ক্তিতে ইতিহাস</h3>
+<p class="en">“Huts of history’s shame” points to slave quarters; “a black ocean” recalls the sea crossing of the slave trade and the strength of Black people as a whole; “the dream and the hope of the slave” makes the speaker the answer to her ancestors’ longing for freedom.</p>
+<p class="bn">“Huts of history’s shame” ক্রীতদাসদের বাসস্থানের ইঙ্গিত; “black ocean” দাস-বাণিজ্যের সমুদ্রযাত্রার স্মৃতি ও কৃষ্ণাঙ্গ জনগোষ্ঠীর সম্মিলিত শক্তিকে বোঝায়; “dream and hope of the slave” বলতে কবি নিজেকে পূর্বপুরুষদের মুক্তির স্বপ্নের পূরণ হিসেবে দেখান।</p></div>
+</section>
+
+<section id="an">
+<h2 class="t">Critical analysis · সমালোচনামূলক বিশ্লেষণ</h2>
+<div class="c"><h3>Theme · মূল ভাবনা</h3><p class="en">Resilience, self-worth and defiance against racial and gender oppression; dignity as the best answer to hatred.</p><p class="bn">বর্ণ ও লিঙ্গবৈষম্যের বিরুদ্ধে অদম্য সহনশীলতা, আত্মমর্যাদা ও প্রতিরোধ; ঘৃণার সবচেয়ে বড় জবাব মর্যাদা।</p></div>
+<div class="c"><h3>Speaker and audience · বক্তা ও শ্রোতা</h3><p class="en">The speaker begins as one confident woman addressing an unnamed “you”, the oppressors. By stanza 8 she speaks for a whole people, “I’m a black ocean”. The personal becomes collective.</p><p class="bn">শুরুতে একজন আত্মবিশ্বাসী নারী “you” অর্থাৎ নিপীড়কদের সম্বোধন করেন। অষ্টম স্তবকে তিনি হয়ে ওঠেন পুরো জাতির কণ্ঠ — ব্যক্তিগত কণ্ঠ সমষ্টিগত হয়ে যায়।</p></div>
+<div class="c"><h3>Structure and tone · গঠন ও সুর</h3><p class="en">Stanzas 1–7 mix taunting questions with defiant claims (“You may…”, “Does my…”). Stanzas 8–9 shift to history and hope, the lines lengthen, and the refrain “I rise” builds to a triple climax. The tone moves from playful mockery to solemn pride to triumph.</p><p class="bn">১–৭ স্তবকে বিদ্রূপাত্মক প্রশ্ন ও তেজস্বী ঘোষণা। ৮–৯ স্তবকে ইতিহাস ও আশার দিকে মোড়, “I rise” ধ্বনি তিনবার ফিরে চূড়ান্ত পর্যায়ে পৌঁছায়। সুর কৌতুকপূর্ণ ব্যঙ্গ থেকে গম্ভীর গর্ব, শেষে বিজয়োল্লাস।</p></div>
+<div class="c"><h3>Symbols · প্রতীক</h3><p class="en"><b>Dust, air, tides, moons and suns</b>: natural forces that cannot be stopped. <b>Oil, gold, diamonds</b>: inner wealth that no one can take. <b>Night to daybreak</b>: movement from suffering to freedom.</p><p class="bn"><b>ধুলো, বাতাস, জোয়ার, চাঁদ-সূর্য</b>: প্রকৃতির অপ্রতিরোধ্য শক্তি। <b>তেল, সোনা, হীরে</b>: অন্তরের অমূল্য সম্পদ। <b>রাত থেকে ভোর</b>: দুঃখ থেকে মুক্তির যাত্রা।</p></div>
+<div class="c"><h3>Body, sexuality and Black womanhood · নারীত্ব</h3><p class="en">Lines like “Does my sexiness upset you?” reclaim a body that racist and sexist stereotypes tried to shame. Joy and sensuality become acts of resistance.</p><p class="bn">“Does my sexiness upset you?” — বর্ণবাদী ও লিঙ্গবাদী ধারণা যে শরীরকে লজ্জায় ফেলতে চেয়েছিল, কবি সেটিকে সগর্বে ফিরে পান। আনন্দ ও আকর্ষণই এখানে প্রতিরোধ।</p></div>
+<div class="c"><h3>Message · বার্তা</h3><p class="en">Oppression can distort history, wound the body and attack the spirit, but it cannot decide who a person is. Confidence and memory of one’s roots make rising inevitable.</p><p class="bn">নিপীড়ন ইতিহাস বিকৃত করতে, শরীরে আঘাত করতে, মনোবল ভাঙতে চাইতে পারে — কিন্তু কে কী, তা ঠিক করতে পারে না। আত্মবিশ্বাস ও শিকড়ের স্মৃতিই ওঠাকে অনিবার্য করে।</p></div>
+</section>
+
+<section id="rp">
+<h2 class="t">Rhetoric & prosody · অলংকার ও ছন্দ</h2>
+<div class="sc"><table><tr><th>Device · অলংকার</th><th>Example</th><th>Effect · প্রভাব</th></tr>
+<tr><td>Refrain / repetition<br>পুনরাবৃত্তি</td><td>“I rise”, “Still I’ll rise”</td><td>Drumbeat of resolve · দৃঢ় সংকল্পের ধ্বনি</td></tr>
+<tr><td>Anaphora<br>অনুপ্রাস-পুনরুক্তি</td><td>“You may… You may… You may…”; “Does my…”</td><td>Builds pressure, mocks the oppressor · চাপ ও ব্যঙ্গ</td></tr>
+<tr><td>Simile · উপমা</td><td>“like dust”, “like air”, “like moons and like suns”, “like teardrops”</td><td>Makes rising natural and certain · ওঠাকে স্বাভাবিক ও নিশ্চিত করে</td></tr>
+<tr><td>Metaphor · রূপক</td><td>“I’m a black ocean”; “oil wells… in my living room”</td><td>Inner wealth, vast collective power · অন্তরের ঐশ্বর্য</td></tr>
+<tr><td>Rhetorical question<br>প্রশ্নালংকার</td><td>“Does my sassiness upset you?”</td><td>Challenges, does not seek an answer · চ্যালেঞ্জ</td></tr>
+<tr><td>Hyperbole · অতিশয়োক্তি</td><td>“gold mines diggin’ in my own backyard”</td><td>Playful exaggeration of pride · গর্বের অতিরঞ্জন</td></tr>
+<tr><td>Imagery · চিত্রকল্প</td><td>“Shoulders falling down like teardrops”</td><td>Visual picture of defeat the speaker refuses · পরাজয়ের ছবি</td></tr>
+<tr><td>Climax · ক্রমবর্ধমান</td><td>shoot → cut → kill</td><td>Violence escalates, yet “I’ll rise” · হিংসা বাড়ে, তবু ওঠা থামে না</td></tr>
+<tr><td>Alliteration, internal rhyme<br>ধ্বনি-সাম্য</td><td>“Welling and swelling”; “bitter, twisted”</td><td>Wave-like sound · ঢেউয়ের ধ্বনি</td></tr>
+<tr><td>Contrast / antithesis<br>বৈপরীত্য</td><td>night of terror / daybreak clear</td><td>Pain to freedom · যন্ত্রণা থেকে মুক্তি</td></tr>
+<tr><td>Direct address (apostrophe)</td><td>“you”</td><td>Intimate confrontation · সরাসরি মুখোমুখি</td></tr></table></div>
+<div class="c"><h3>Prosody · ছন্দ-প্রকরণ</h3>
+<p class="en"><b>Form:</b> lyric of 9 stanzas and 43 lines: seven quatrains, then a six-line and a nine-line stanza. <b>Metre:</b> not strict; lines have mostly 3–4 stresses with a loose, ballad-like beat that carries a spoken, song-like rhythm (close to blues and spiritual traditions). <b>Rhyme:</b> mainly the second and fourth lines of a quatrain (abcb), with slant rhyme and repetition.</p>
+<p class="bn"><b>গঠন:</b> ৯টি স্তবক, ৪৩ পঙ্‌ক্তি — সাতটি চতুষ্পদী, তারপর ছয় ও নয় লাইনের দুটি স্তবক। <b>ছন্দ:</b> কড়া মাত্রাবৃত্ত নয়; প্রতি লাইনে ৩–৪টি প্রস্বর, ব্যালাড-ঘেঁষা কথ্য, গানের মতো তাল। <b>মিল:</b> সাধারণত ২য় ও ৪র্থ লাইনে (abcb), সঙ্গে আংশিক মিল ও পুনরাবৃত্তি।</p></div>
+<div class="sc"><table><tr><th>Stanza</th><th>Rhyming words</th></tr>
+<tr><td>1</td><td>lies – rise</td></tr><tr><td>2</td><td>gloom – room</td></tr><tr><td>3</td><td>tides – rise (high/rise: assonance, near-rhyme)</td></tr><tr><td>4</td><td>eyes – cries</td></tr><tr><td>5</td><td>hard – backyard</td></tr><tr><td>6</td><td>eyes – rise</td></tr><tr><td>7</td><td>surprise – thighs</td></tr><tr><td>8</td><td>shame/pain with “I rise”; wide – tide</td></tr><tr><td>9</td><td>fear – clear; gave – slave</td></tr></table></div>
+<div class="c"><h3>Diction and tone · শব্দচয়ন ও সুর</h3><p class="en">Plain, colloquial words (“’Cause”, “diggin’”) keep the voice natural and confident; Bengali readers can think of it as a spoken, proud voice rather than a formal speech.</p><p class="bn">সহজ, কথ্য শব্দ (“’Cause”, “diggin’”) কণ্ঠকে স্বাভাবিক ও আত্মবিশ্বাসী রাখে; এ যেন আনুষ্ঠানিক ভাষণ নয়, গর্বিত মুখের কথা।</p></div>
+</section>
+
+<section id="qa">
+<h2 class="t">Questions · প্রশ্নোত্তর</h2>
+<p class="en" style="margin:0 0 8px">Textbook questions (p. 108) plus extra practice. Tap to open the model answer.</p>
+<div id="qs"></div>
+</section>
+</main>
+<div id="sheet" role="dialog" aria-live="polite"><button class="x" aria-label="Close">✕</button><h3 id="sw"></h3><div class="m" id="sm"></div><div class="n" id="sn"></div></div>
+<nav><button data-t="poem" class="on"><b>📜</b>Poem</button><button data-t="bg"><b>🕰</b>History</button><button data-t="an"><b>🔍</b>Analysis</button><button data-t="rp"><b>🎼</b>Devices</button><button data-t="qa"><b>✍</b>Q&amp;A</button></nav>
+<script>
+const P=[["You may write me down in history","With your bitter, twisted lies,","You may trod me in the very dirt","But still, like dust, I'll rise."],
+["Does my sassiness upset you?","Why are you beset with gloom?","'Cause I walk like I've got oil wells","Pumping in my living room."],
+["Just like moons and like suns,","With the certainty of tides,","Just like hopes springing high,","Still I'll rise."],
+["Did you want to see me broken?","Bowed head and lowered eyes?","Shoulders falling down like teardrops,","Weakened by my soulful cries?"],
+["Does my haughtiness offend you?","Don't you take it awful hard","'Cause I laugh like I've got gold mines","Diggin' in my own backyard."],
+["You may shoot me with your words,","You may cut me with your eyes,","You may kill me with your hatefulness,","But still, like air, I'll rise."],
+["Does my sexiness upset you?","Does it come as a surprise","That I dance like I've got diamonds","At the meeting of my thighs?"],
+["Out of the huts of history's shame","I rise","Up from a past that's rooted in pain","I rise","I'm a black ocean, leaping and wide,","Welling and swelling I bear in the tide."],
+["Leaving behind nights of terror and fear","I rise","Into a daybreak that's wondrously clear","I rise","Bringing the gifts that my ancestors gave,","I am the dream and the hope of the slave.","I rise","I rise","I rise."]];
+const T=["তোমরা তোমাদের তিক্ত, বিকৃত মিথ্যা দিয়ে আমাকে ইতিহাসে লিখে রাখতে পারো, আমাকে একেবারে ধুলোয় পিষে দিতে পারো; তবুও ধুলোর মতোই আমি উঠে দাঁড়াব।",
+"আমার দুঃসাহসী ভঙ্গি কি তোমাদের বিচলিত করে? তোমরা বিষণ্ণতায় ঘেরা কেন? কারণ আমি এমনভাবে হাঁটি যেন আমার বসার ঘরে তেলের কূপ থেকে তেল উঠছে।",
+"চাঁদ ও সূর্যের মতো, জোয়ারের নিশ্চিত গতির মতো, আকাশছোঁয়া আশার মতো — তবুও আমি উঠে দাঁড়াব।",
+"তোমরা কি আমাকে ভেঙে পড়া দেখতে চেয়েছিলে — মাথা নত, দৃষ্টি অবনত, অশ্রুবিন্দুর মতো ঝরে পড়া কাঁধ, হৃদয়বিদারক কান্নায় দুর্বল?",
+"আমার অহংকার কি তোমাদের আঘাত করে? এত গায়ে মেখো না; কারণ আমি এমনভাবে হাসি যেন আমার নিজের বাড়ির পেছনের উঠোনেই সোনার খনি খোঁড়া হচ্ছে।",
+"তোমরা কথা দিয়ে আমাকে গুলি করতে পারো, চাহনি দিয়ে কাটতে পারো, ঘৃণা দিয়ে হত্যা করতে পারো; তবুও বাতাসের মতো আমি উঠে দাঁড়াব।",
+"আমার আকর্ষণীয়তা কি তোমাদের বিচলিত করে? এ কি অবাক লাগে যে আমি এমনভাবে নাচি যেন আমার ঊরুসন্ধিতে হীরে লুকিয়ে আছে?",
+"ইতিহাসের লজ্জার কুঁড়েঘর থেকে আমি উঠে দাঁড়াই; যন্ত্রণায় শিকড়গাঁথা অতীত থেকে আমি উঠে দাঁড়াই। আমি এক কালো মহাসাগর — উত্তাল ও বিস্তৃত, উথলে-ফুলে জোয়ারকে বহন করি।",
+"আতঙ্ক ও ভয়ের রাত পেছনে ফেলে আমি উঠে দাঁড়াই; বিস্ময়করভাবে স্বচ্ছ এক ভোরে আমি উঠে দাঁড়াই; পূর্বপুরুষদের দেওয়া উপহার বয়ে এনে — আমিই ক্রীতদাসের স্বপ্ন ও আশা। আমি উঠে দাঁড়াই। আমি উঠে দাঁড়াই। আমি উঠে দাঁড়াই।"];
+const D=`i=আমি|you=তুমি / তোমরা|may=পারো (সম্ভাবনা)|write=লেখা|me=আমাকে|down=নিচে|in=মধ্যে / -এ|history=ইতিহাস|with=সহ / দিয়ে|your=তোমাদের|bitter=তিক্ত|twisted=বিকৃত, মোচড়ানো|lies=মিথ্যা|trod=পদদলিত করা|the=সেই|very=একেবারে|dirt=ধুলোবালি, ময়লা মাটি|but=কিন্তু|still=তবুও|like=মতো|dust=ধুলো|ill=আমি করব|rise=উঠে দাঁড়ানো|does=কি (প্রশ্নসূচক সহায়ক ক্রিয়া)|my=আমার|sassiness=দুঃসাহসী, তেজি ভাব|upset=বিচলিত করা|why=কেন|are=হচ্ছ|beset=ঘিরে ধরা|gloom=বিষণ্ণতা, অন্ধকার ভাব|cause=কারণ (because)|walk=হাঁটা|ive=আমার আছে (I have)|got=পেয়েছি|oil=খনিজ তেল|wells=কূপ|pumping=পাম্প করে তোলা|living=বসবাসের|room=ঘর|just=ঠিক|moons=চাঁদ|and=এবং|suns=সূর্য|certainty=নিশ্চয়তা|of=-এর|tides=জোয়ার|hopes=আশা|springing=লাফিয়ে ওঠা|high=উঁচুতে|did=করেছিলে|want=চাওয়া|to=-কে / করতে|see=দেখা|broken=ভগ্ন, ভেঙে পড়া|bowed=নত|head=মাথা|lowered=নামানো|eyes=চোখ, দৃষ্টি|shoulders=কাঁধ|falling=ঝুলে পড়া|teardrops=অশ্রুবিন্দু|weakened=দুর্বল|by=দ্বারা|soulful=হৃদয়স্পর্শী|cries=কান্না|haughtiness=অহংকার, দম্ভ|offend=আঘাত দেওয়া, রুষ্ট করা|dont=করো না|take=নেওয়া|it=এটা|awful=ভীষণ|hard=কঠিনভাবে|laugh=হাসা|gold=সোনা|mines=খনি|diggin=খোঁড়া|own=নিজের|backyard=বাড়ির পেছনের উঠোন|shoot=গুলি করা|words=কথা|cut=কাটা|kill=হত্যা করা|hatefulness=ঘৃণা|air=বাতাস|sexiness=আকর্ষণীয়তা|come=আসা|as=হিসেবে|a=একটি|surprise=বিস্ময়|that=যে|dance=নাচা|diamonds=হীরে|at=-এ|meeting=মিলনস্থল|thighs=ঊরু|out=বাইরে|huts=কুঁড়েঘর|historys=ইতিহাসের|shame=লজ্জা|up=উপরে|from=থেকে|past=অতীত|rooted=শিকড়গাঁথা|pain=যন্ত্রণা|im=আমি হলাম|black=কালো / কৃষ্ণাঙ্গ|ocean=মহাসাগর|leaping=লাফিয়ে ওঠা|wide=বিস্তৃত|welling=উথলে ওঠা|swelling=ফুলে ওঠা|bear=বহন করা|tide=জোয়ার|leaving=ছেড়ে আসা|behind=পেছনে|nights=রাত|terror=আতঙ্ক|fear=ভয়|into=ভেতরে|daybreak=ভোর|wondrously=বিস্ময়করভাবে|clear=স্বচ্ছ|bringing=বয়ে আনা|gifts=উপহার|ancestors=পূর্বপুরুষ|gave=দিয়েছিলেন|am=আমি|dream=স্বপ্ন|hope=আশা|slave=ক্রীতদাস`;
+const N={rise:"কবিতার কেন্দ্রীয় ক্রিয়া: অপমান-অত্যাচারের পরেও মর্যাদায় উঠে দাঁড়ানো।",dust:"উপমা: পায়ে মাড়ালেও ধুলো আবার ওড়ে — দমন করা যায় না।",air:"বাতাসকে ধরা বা হত্যা করা যায় না; অদম্যতার প্রতীক।",lies:"ইতিহাসে কৃষ্ণাঙ্গদের বিকৃত ও অপমানজনক চিত্রায়ণ।",history:"নিপীড়কদের লেখা পক্ষপাতদুষ্ট ইতিহাস।",sassiness:"সাহসী, দৃঢ় আচরণ; নিপীড়ক এতে বিরক্ত।",oil:"রূপক: অন্তরের ঐশ্বর্য ও অটল আত্মবিশ্বাস।",gold:"রূপক: আত্মসম্মান ও অন্তর্নিহিত শক্তির ভাণ্ডার।",diamonds:"রূপক: বিপুল সম্পদ ও শক্তি; নিজ দেহ ও সত্তার মূল্যবোধ।",thighs:"নারীদেহের সৌন্দর্যকে লজ্জা না দিয়ে গর্বের সঙ্গে উদ্‌যাপন।",tides:"জোয়ার নিয়মিত ও অনিবার্য — তেমনই কবির উত্থান।",moons:"চাঁদ-সূর্য ডুবে আবার ওঠে — পতনের পর পুনরুত্থান।",gloom:"কবির আত্মবিশ্বাসে নিপীড়কদের বিষণ্ণতা।",broken:"নিপীড়কেরা কবিকে ভগ্ন ও পরাজিত দেখতে চায়।",bowed:"নত মাথা — বশ্যতা ও পরাজয়ের ভঙ্গি।",huts:"ক্রীতদাসদের জীর্ণ বাসস্থান; ইতিহাসের লজ্জা।",ocean:"কৃষ্ণাঙ্গ জাতির বিশাল সম্মিলিত শক্তি ও দাস-জাহাজের সমুদ্রযাত্রার স্মৃতি।",daybreak:"ভোর: নতুন যুগ, মুক্তি ও আশার প্রতীক।",ancestors:"ক্রীতদাস পূর্বপুরুষ; তাঁদের শক্তি ও স্বপ্নের উত্তরাধিকার।",slave:"কবি নিজেকে ক্রীতদাসদের মুক্তির স্বপ্নের পূর্ণতা বলে ঘোষণা করেন।",terror:"দাসত্ব ও বর্ণবাদী সহিংসতার ভয়াবহ অভিজ্ঞতা।",welling:"Welling and swelling — অন্ত্যমিল ও ঢেউয়ের ধ্বনি।"};
+const M={};D.split('|').forEach(x=>{const i=x.indexOf('=');M[x.slice(0,i)]=x.slice(i+1)});
+const key=t=>t.toLowerCase().replace(/[’']/g,'').replace(/[^a-z]/g,'');
+const clean=t=>t.replace(/^[^A-Za-z']+|[^A-Za-z']+$/g,'');
+const pt=document.getElementById('pt');
+P.forEach((s,i)=>{const d=document.createElement('div');d.className='st';
+d.innerHTML=s.map(l=>'<span class="ln">'+l.split(' ').map(t=>'<span class="w" tabindex="0" role="button" data-k="'+key(t)+'" data-t="'+clean(t).replace(/"/g,'')+'">'+t+'</span>').join(' ')+'</span>').join('')+'<p class="bn">'+T[i]+'</p>';pt.appendChild(d)});
+const sh=document.getElementById('sheet');let cur=null;
+function show(e){const w=e.target.closest('.w');if(!w)return;if(cur)cur.classList.remove('sel');cur=w;w.classList.add('sel');
+sw.textContent=w.dataset.t;sm.textContent=M[w.dataset.k]||'—';sn.textContent=N[w.dataset.k]||'';sh.classList.add('on')}
+pt.addEventListener('click',show);pt.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show(e)}});
+function hide(){sh.classList.remove('on');if(cur)cur.classList.remove('sel')}
+sh.querySelector('.x').onclick=hide;
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{hide();document.querySelectorAll('nav button,section').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.getElementById(b.dataset.t).classList.add('on');scrollTo(0,0)});
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>{document.body.className='l-'+b.dataset.l;document.querySelectorAll('.lang button').forEach(x=>x.classList.remove('on'));b.classList.add('on')});
+const Q=[
+["A1 · Textbook","2","“You may trod me in the very dirt / But still, like dust, I’ll rise.” What does “like dust, I’ll rise” suggest?","It suggests that however much the speaker is trampled and humiliated, she will rise again, as dust that is stepped on rises into the air. It shows her unbreakable spirit.","পায়ে মাড়ালেও ধুলো যেমন আবার ওড়ে, তেমনই যত অপমান বা নিপীড়নই করা হোক, কবি আবার উঠে দাঁড়াবেন। এতে তাঁর অদম্য মনোবল প্রকাশ পায়।"],
+["A2 · Textbook","2","“Does my sassiness upset you? Why are you beset with gloom?” What emotion does the speaker challenge in the listener?","She challenges the listener’s resentment and discomfort at her confidence. The oppressor is gloomy because she refuses to be sad or submissive.","কবি শ্রোতার ঈর্ষা ও অস্বস্তিকে প্রশ্ন করেন। তিনি বিষণ্ণ বা বশ্য হতে রাজি নন বলেই নিপীড়কেরা বিষণ্ণ ও বিরক্ত।"],
+["B1 · Textbook","6","Explain the significance of the repetition of “I rise”. How does it contribute to the theme of resilience and defiance?","“I rise” works as a refrain, like a drumbeat. It first appears as “I’ll rise” at the end of stanzas 1, 3 and 6, each time after an insult or threat; the rhythm shows that every attack ends the same way. In stanzas 8 and 9 it becomes a present-tense “I rise”, so the rising is now happening, not just promised. The closing triple “I rise” is a climax: it lifts the voice from personal courage to collective triumph. The repeated word imitates persistence, since the speaker will not stop however often she is pushed down. Thus the refrain carries both resilience (enduring) and defiance (refusing).","“I rise” একটি ধ্রুবপদ (refrain), ঢাকের বোলের মতো। ১, ৩ ও ৬ স্তবকে প্রতিটি অপমান বা হুমকির পর “I’ll rise” আসে — অর্থাৎ প্রতিটি আক্রমণের পরিণাম একই। ৮ ও ৯ স্তবকে এটি বর্তমান কালে “I rise”, অর্থাৎ ওঠা এখন ঘটছে। শেষের তিনবার “I rise” চূড়ান্ত পর্যায় — ব্যক্তিগত সাহস থেকে সমষ্টির বিজয়ে উত্তরণ। পুনরাবৃত্তি বক্তার অধ্যবসায়ের প্রতীক: যতবারই নামানো হোক, সে থামবে না। এভাবে ধ্রুবপদ সহনশীলতা ও প্রতিরোধ — দুটিই বহন করে।"],
+["B2 · Textbook","6","Analyze the imagery in “You may shoot me with your words… But still, like air, I’ll rise.” How does it enhance the message of empowerment?","Words, eyes and hatefulness are given the power of weapons: shooting, cutting, killing. The progression shows increasing violence, and covers verbal abuse, contemptuous looks and open hatred. Against it the poet sets “air”. Air cannot be shot, cut or killed; it is everywhere and necessary for life. By comparing herself with air, the speaker shows that she is beyond the reach of her oppressors. The vivid physical imagery makes the pain real, so that her refusal to be defeated feels earned and powerful.","কথা, দৃষ্টি ও ঘৃণাকে অস্ত্রের শক্তি দেওয়া হয়েছে — গুলি করা, কাটা, হত্যা করা। হিংসা ক্রমশ বাড়ে এবং গালাগাল, তাচ্ছিল্যের দৃষ্টি ও প্রকাশ্য ঘৃণাকে ছুঁয়ে যায়। এর বিপরীতে কবি “বাতাস”-কে বসান। বাতাসকে গুলি, কাটা বা হত্যা করা যায় না; সে সর্বত্র, জীবনের জন্য অপরিহার্য। নিজেকে বাতাসের সঙ্গে তুলনা করে কবি দেখান তিনি নিপীড়কদের নাগালের বাইরে। স্পষ্ট দৈহিক চিত্রকল্প যন্ত্রণাকে বাস্তব করে তোলে, ফলে তাঁর অপরাজিত থাকা আরও জোরালো হয়।"],
+["SAQ 3","2","What does “oil wells pumping in my living room” suggest?","It is a metaphor for hidden wealth and confidence. The speaker walks as if she were rich, with her riches right at home, showing self-worth that no one can take away.","এটি লুকানো ঐশ্বর্য ও আত্মবিশ্বাসের রূপক। কবি এমনভাবে হাঁটেন যেন নিজের ঘরেই সম্পদ উঠছে — তাঁর আত্মমর্যাদা কেউ কেড়ে নিতে পারে না।"],
+["SAQ 4","2","Why does the speaker ask so many questions?","They are rhetorical questions. She does not want answers; she uses them to mock the oppressors and show that their anger only proves her strength.","এগুলি প্রশ্নালংকার। কবি উত্তর চান না; এর মাধ্যমে নিপীড়কদের ব্যঙ্গ করেন এবং দেখান তাদের রাগই তাঁর শক্তির প্রমাণ।"],
+["SAQ 5","2","What does “I am the dream and the hope of the slave” mean?","The speaker sees herself as the fulfilment of her enslaved ancestors’ longing for freedom and dignity. Her rising realises what they hoped for.","কবি নিজেকে ক্রীতদাস পূর্বপুরুষদের মুক্তি ও মর্যাদার স্বপ্নের পূর্ণতা হিসেবে দেখেন। তাঁর উত্থান তাঁদের আশারই সফল রূপ।"],
+["SAQ 6","2","What is the tone of the poem?","Defiant, confident and proud, mixed with mockery and joy, growing into solemn and triumphant in the last two stanzas.","অবাধ্য, আত্মবিশ্বাসী ও গর্বিত; সঙ্গে ব্যঙ্গ ও আনন্দ। শেষ দুই স্তবকে গম্ভীর ও বিজয়োল্লাসী।"],
+["Broad 3","6","How does “Still I Rise” express Black pride and resistance to racism?","The poem moves from personal defiance to collective memory. Stanzas 1–7 answer racist lies, gloom and violence with confidence and laughter. Stanza 8 names the “huts of history’s shame” and “a past that’s rooted in pain”, owning the history of slavery rather than hiding it, and calls the Black people “a black ocean”, a proud, powerful whole. Stanza 9 moves from “nights of terror” to “daybreak”, carrying “the gifts that my ancestors gave”. The speaker refuses shame, the central weapon of racism, and turns heritage into strength. Her final claim, to be “the dream and the hope of the slave”, makes pride a form of resistance.","কবিতাটি ব্যক্তিগত অবাধ্যতা থেকে সমষ্টিগত স্মৃতিতে যায়। ১–৭ স্তবকে বর্ণবাদী মিথ্যা, বিষণ্ণতা ও হিংসার জবাব আত্মবিশ্বাস ও হাসিতে। ৮ম স্তবকে “huts of history’s shame” ও “pain”-এর অতীতকে লুকিয়ে না রেখে গ্রহণ করা হয়, আর কৃষ্ণাঙ্গ জনগোষ্ঠীকে “black ocean”-এর মতো গর্বিত বিশাল শক্তি বলা হয়। ৯ম স্তবকে “terror”-এর রাত থেকে “daybreak”-এ পৌঁছে পূর্বপুরুষদের উপহার বহন করা হয়। বর্ণবাদের প্রধান অস্ত্র লজ্জা — কবি তা প্রত্যাখ্যান করে ঐতিহ্যকে শক্তিতে বদলান। “dream and hope of the slave” দাবি করে গর্বকেই প্রতিরোধ করে তোলেন।"],
+["Broad 4","6","Discuss the use of natural imagery and similes in the poem.","Angelou compares her rising to dust, air, moons and suns, tides and an ocean. All of these are natural, repeating and unstoppable. Dust and air cannot be crushed or killed; moons and suns set and rise again; tides return every day. The similes make her rise seem not just an act of will but a law of nature. The “black ocean” widens the picture: her community is as vast and unstoppable as the sea. Set against the cruelty of men, nature becomes a moral force on the side of the oppressed.","অ্যাঞ্জেলো নিজের ওঠাকে ধুলো, বাতাস, চাঁদ-সূর্য, জোয়ার ও মহাসাগরের সঙ্গে তুলনা করেন। সবই প্রাকৃতিক, চক্রাকার ও অপ্রতিরোধ্য। ধুলো-বাতাসকে পিষে বা হত্যা করা যায় না; চাঁদ-সূর্য অস্ত যায়, আবার ওঠে; জোয়ার রোজ ফেরে। ফলে তাঁর উত্থান শুধু ইচ্ছাশক্তি নয়, প্রকৃতির নিয়ম বলে মনে হয়। “black ocean” ছবিটিকে বড় করে — তাঁর জনগোষ্ঠী সাগরের মতো বিশাল ও অদম্য। মানুষের নিষ্ঠুরতার বিপরীতে প্রকৃতি নিপীড়িতের পক্ষে নৈতিক শক্তি হয়ে ওঠে।"],
+["Broad 5","6","Justify the title “Still I Rise”.","“Still” means “even so”: after lies, humiliation, hatred and a painful past, the speaker rises anyway. The title is also the refrain, so it is the main message of the poem. “Rise” has several senses: physical standing up, rising in dignity, rising from slavery to freedom, and rising like the sun at daybreak. The title is a statement of fact, not a request, so it shows total confidence. It sums up the poem’s movement from oppression to hope and is therefore apt.","“Still” মানে “তবুও”: মিথ্যা, অপমান, ঘৃণা ও যন্ত্রণার অতীত সত্ত্বেও কবি উঠে দাঁড়ান। শিরোনামই ধ্রুবপদ, তাই এটিই কবিতার মূল বার্তা। “Rise”-এর কয়েকটি অর্থ: শারীরিকভাবে দাঁড়ানো, মর্যাদায় ওঠা, দাসত্ব থেকে মুক্তিতে ওঠা, আর ভোরে সূর্যের উদয়। শিরোনামটি অনুরোধ নয়, ঘোষণা — পূর্ণ আত্মবিশ্বাসের প্রকাশ। নিপীড়ন থেকে আশায় কবিতার যাত্রাকে এটি ধরে রাখে, তাই যথার্থ।"]];
+document.getElementById('qs').innerHTML=Q.map(q=>'<details><summary>'+q[0]+'<i>'+q[1]+' marks</i><br><span class="en">'+q[2]+'</span></summary><div class="ans"><p class="en"><b>Answer:</b> '+q[3]+'</p><p class="bn"><b>উত্তর:</b> '+q[4]+'</p></div></details>').join('');
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+</script></body></html>
