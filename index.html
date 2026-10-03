@@ -43,6 +43,63 @@ summary i{font-style:normal;background:var(--ink);color:#fff;border-radius:10px;
 body.l-en .bn:not(.st .bn):not(.keep){display:none}body.l-bn .en{display:none}
 body.l-en .st .bn{display:none}
 @media (prefers-reduced-motion:reduce){#sheet{transition:none}}
+
+/* Enhanced attractive bottom menu bar */
+nav{
+  position:fixed;bottom:0;left:0;right:0;
+  background:linear-gradient(180deg,#3a2550 0%,#2b1a3d 100%);
+  display:flex;gap:2px;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));
+  z-index:6;
+  box-shadow:0 -8px 24px rgba(43,26,61,.35);
+  border-top:1px solid rgba(232,155,28,.25);
+  border-radius:18px 18px 0 0;
+}
+nav button{
+  flex:1;background:transparent;border:0;color:#b9a5d0;
+  padding:8px 2px 6px;font-size:11px;cursor:pointer;
+  border-radius:12px;position:relative;
+  transition:color .2s,background .2s,transform .15s;
+  font-weight:500;letter-spacing:.02em;
+}
+nav button b{display:block;font-size:20px;font-weight:400;line-height:1.2;margin-bottom:2px;transition:transform .2s}
+nav button:active{transform:scale(.94)}
+nav button:hover{color:#f0e6ff}
+nav button.on{
+  color:#fff;
+  background:rgba(232,155,28,.18);
+  box-shadow:inset 0 0 0 1px rgba(232,155,28,.35);
+}
+nav button.on b{transform:translateY(-1px)}
+nav button.on::after{
+  content:"";position:absolute;top:4px;left:50%;transform:translateX(-50%);
+  width:18px;height:3px;border-radius:2px;background:var(--gold);
+}
+/* Listen / TTS controls */
+.tts-bar{
+  display:flex;align-items:center;gap:10px;margin:0 0 14px;
+  flex-wrap:wrap;
+}
+.tts-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,#e89b1c,#c47a0a);
+  color:#2b1a3d;border:0;border-radius:999px;
+  padding:10px 18px;font:600 14px system-ui,sans-serif;
+  cursor:pointer;box-shadow:0 4px 14px rgba(232,155,28,.4);
+  transition:transform .15s,box-shadow .15s;
+}
+.tts-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(232,155,28,.5)}
+.tts-btn:active{transform:scale(.97)}
+.tts-btn.playing{
+  background:linear-gradient(135deg,#9c3d54,#7a2e42);
+  color:#fff;box-shadow:0 4px 14px rgba(156,61,84,.45);
+}
+.tts-btn svg{width:18px;height:18px;flex-shrink:0}
+.tts-status{font-size:12px;color:#e6d6f2;opacity:.9}
+/* Header polish */
+header{
+  background:linear-gradient(90deg,#2b1a3d 0%,#3d2255 100%);
+  box-shadow:0 2px 12px rgba(0,0,0,.2);
+}
 </style></head><body class="l-both">
 <header><div><h1>Still I Rise</h1><small>Maya Angelou · Class XI · Realm of English (B)</small></div>
 <div class="lang" role="group" aria-label="Language"><button data-l="en">EN</button><button data-l="both" class="on">EN+বাং</button><button data-l="bn">বাং</button></div></header>
@@ -50,6 +107,13 @@ body.l-en .st .bn{display:none}
 <section id="poem" class="on">
 <div class="poem"><h2>Still I Rise</h2><p class="au">Maya Angelou</p>
 <p class="hint">Tap any word for its Bengali meaning. তুমি যে-কোনো শব্দে ট্যাপ করলে বাংলা অর্থ দেখতে পাবে।</p>
+<div class="tts-bar">
+  <button type="button" class="tts-btn" id="ttsBtn" aria-label="Listen to the poem">
+    <svg id="ttsIcon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+    <span id="ttsLabel">Listen to poem</span>
+  </button>
+  <span class="tts-status" id="ttsStatus"></span>
+</div>
 <div id="pt"></div></div>
 <div class="c" style="margin-top:12px"><h3>In one line · এক লাইনে</h3><p class="en">A proud, defiant voice answers oppression with confidence, humour and hope, and speaks for a whole people rising from slavery.</p><p class="bn">একটি গর্বিত, অপরাজেয় কণ্ঠ নিপীড়নের জবাব দেয় আত্মবিশ্বাস, রসবোধ ও আশা দিয়ে — আর কথা বলে দাসত্ব থেকে উঠে আসা পুরো একটি জাতির হয়ে।</p></div>
 </section>
@@ -62,7 +126,7 @@ body.l-en .st .bn{display:none}
 <div class="c"><h3>The poem · কবিতাটি</h3>
 <p class="en">“Still I Rise” appeared in her 1978 collection <i>And Still I Rise</i>. It grew out of a country shaped by slavery, segregation and the struggle for civil rights, and it also answers the stereotypes attached to Black women.</p>
 <p class="bn">“Still I Rise” প্রকাশিত হয় ১৯৭৮ সালের কাব্যগ্রন্থ <i>And Still I Rise</i>-এ। দাসপ্রথা, বর্ণবৈষম্য ও নাগরিক অধিকার সংগ্রামে গড়া আমেরিকার প্রেক্ষাপটে এটি লেখা; কৃষ্ণাঙ্গ নারীদের ওপর চাপানো গৎবাঁধা ধারণারও এটি জবাব।</p></div>
-<div class="tl">
+<div class="c tl"><h3>Timeline · সময়রেখা</h3>
 <p><b>1619</b> — First enslaved Africans brought to Virginia. · ভার্জিনিয়ায় প্রথম ক্রীতদাস আফ্রিকানদের আনা হয়।</p>
 <p><b>1863–65</b> — Emancipation Proclamation; 13th Amendment ends slavery. · দাসপ্রথার অবসান।</p>
 <p><b>c.1877–1960s</b> — Jim Crow laws enforce segregation. · জিম ক্রো আইনে বর্ণবিচ্ছিন্নতা।</p>
@@ -84,7 +148,7 @@ body.l-en .st .bn{display:none}
 </section>
 
 <section id="rp">
-<h2 class="t">Rhetoric & prosody · অলংকার ও ছন্দ</h2>
+<h2 class="t">Rhetoric &amp; prosody · অলংকার ও ছন্দ</h2>
 <div class="sc"><table><tr><th>Device · অলংকার</th><th>Example</th><th>Effect · প্রভাব</th></tr>
 <tr><td>Refrain / repetition<br>পুনরাবৃত্তি</td><td>“I rise”, “Still I’ll rise”</td><td>Drumbeat of resolve · দৃঢ় সংকল্পের ধ্বনি</td></tr>
 <tr><td>Anaphora<br>অনুপ্রাস-পুনরুক্তি</td><td>“You may… You may… You may…”; “Does my…”</td><td>Builds pressure, mocks the oppressor · চাপ ও ব্যঙ্গ</td></tr>
@@ -96,7 +160,8 @@ body.l-en .st .bn{display:none}
 <tr><td>Climax · ক্রমবর্ধমান</td><td>shoot → cut → kill</td><td>Violence escalates, yet “I’ll rise” · হিংসা বাড়ে, তবু ওঠা থামে না</td></tr>
 <tr><td>Alliteration, internal rhyme<br>ধ্বনি-সাম্য</td><td>“Welling and swelling”; “bitter, twisted”</td><td>Wave-like sound · ঢেউয়ের ধ্বনি</td></tr>
 <tr><td>Contrast / antithesis<br>বৈপরীত্য</td><td>night of terror / daybreak clear</td><td>Pain to freedom · যন্ত্রণা থেকে মুক্তি</td></tr>
-<tr><td>Direct address (apostrophe)</td><td>“you”</td><td>Intimate confrontation · সরাসরি মুখোমুখি</td></tr></table></div>
+<tr><td>Direct address (apostrophe)</td><td>“you”</td><td>Intimate confrontation · সরাসরি মুখোমুখি</td></tr>
+</table></div>
 <div class="c"><h3>Prosody · ছন্দ-প্রকরণ</h3>
 <p class="en"><b>Form:</b> lyric of 9 stanzas and 43 lines: seven quatrains, then a six-line and a nine-line stanza. <b>Metre:</b> not strict; lines have mostly 3–4 stresses with a loose, ballad-like beat that carries a spoken, song-like rhythm (close to blues and spiritual traditions). <b>Rhyme:</b> mainly the second and fourth lines of a quatrain (abcb), with slant rhyme and repetition.</p>
 <p class="bn"><b>গঠন:</b> ৯টি স্তবক, ৪৩ পঙ্‌ক্তি — সাতটি চতুষ্পদী, তারপর ছয় ও নয় লাইনের দুটি স্তবক। <b>ছন্দ:</b> কড়া মাত্রাবৃত্ত নয়; প্রতি লাইনে ৩–৪টি প্রস্বর, ব্যালাড-ঘেঁষা কথ্য, গানের মতো তাল। <b>মিল:</b> সাধারণত ২য় ও ৪র্থ লাইনে (abcb), সঙ্গে আংশিক মিল ও পুনরাবৃত্তি।</p></div>
@@ -150,16 +215,100 @@ document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{hide();documen
 document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>{document.body.className='l-'+b.dataset.l;document.querySelectorAll('.lang button').forEach(x=>x.classList.remove('on'));b.classList.add('on')});
 const Q=[
 ["A1 · Textbook","2","“You may trod me in the very dirt / But still, like dust, I’ll rise.” What does “like dust, I’ll rise” suggest?","It suggests that however much the speaker is trampled and humiliated, she will rise again, as dust that is stepped on rises into the air. It shows her unbreakable spirit.","পায়ে মাড়ালেও ধুলো যেমন আবার ওড়ে, তেমনই যত অপমান বা নিপীড়নই করা হোক, কবি আবার উঠে দাঁড়াবেন। এতে তাঁর অদম্য মনোবল প্রকাশ পায়।"],
-["A2 · Textbook","2","“Does my sassiness upset you? Why are you beset with gloom?” What emotion does the speaker challenge in the listener?","She challenges the listener’s resentment and discomfort at her confidence. The oppressor is gloomy because she refuses to be sad or submissive.","কবি শ্রোতার ঈর্ষা ও অস্বস্তিকে প্রশ্ন করেন। তিনি বিষণ্ণ বা বশ্য হতে রাজি নন বলেই নিপীড়কেরা বিষণ্ণ ও বিরক্ত।"],
-["B1 · Textbook","6","Explain the significance of the repetition of “I rise”. How does it contribute to the theme of resilience and defiance?","“I rise” works as a refrain, like a drumbeat. It first appears as “I’ll rise” at the end of stanzas 1, 3 and 6, each time after an insult or threat; the rhythm shows that every attack ends the same way. In stanzas 8 and 9 it becomes a present-tense “I rise”, so the rising is now happening, not just promised. The closing triple “I rise” is a climax: it lifts the voice from personal courage to collective triumph. The repeated word imitates persistence, since the speaker will not stop however often she is pushed down. Thus the refrain carries both resilience (enduring) and defiance (refusing).","“I rise” একটি ধ্রুবপদ (refrain), ঢাকের বোলের মতো। ১, ৩ ও ৬ স্তবকে প্রতিটি অপমান বা হুমকির পর “I’ll rise” আসে — অর্থাৎ প্রতিটি আক্রমণের পরিণাম একই। ৮ ও ৯ স্তবকে এটি বর্তমান কালে “I rise”, অর্থাৎ ওঠা এখন ঘটছে। শেষের তিনবার “I rise” চূড়ান্ত পর্যায় — ব্যক্তিগত সাহস থেকে সমষ্টির বিজয়ে উত্তরণ। পুনরাবৃত্তি বক্তার অধ্যবসায়ের প্রতীক: যতবারই নামানো হোক, সে থামবে না। এভাবে ধ্রুবপদ সহনশীলতা ও প্রতিরোধ — দুটিই বহন করে।"],
-["B2 · Textbook","6","Analyze the imagery in “You may shoot me with your words… But still, like air, I’ll rise.” How does it enhance the message of empowerment?","Words, eyes and hatefulness are given the power of weapons: shooting, cutting, killing. The progression shows increasing violence, and covers verbal abuse, contemptuous looks and open hatred. Against it the poet sets “air”. Air cannot be shot, cut or killed; it is everywhere and necessary for life. By comparing herself with air, the speaker shows that she is beyond the reach of her oppressors. The vivid physical imagery makes the pain real, so that her refusal to be defeated feels earned and powerful.","কথা, দৃষ্টি ও ঘৃণাকে অস্ত্রের শক্তি দেওয়া হয়েছে — গুলি করা, কাটা, হত্যা করা। হিংসা ক্রমশ বাড়ে এবং গালাগাল, তাচ্ছিল্যের দৃষ্টি ও প্রকাশ্য ঘৃণাকে ছুঁয়ে যায়। এর বিপরীতে কবি “বাতাস”-কে বসান। বাতাসকে গুলি, কাটা বা হত্যা করা যায় না; সে সর্বত্র, জীবনের জন্য অপরিহার্য। নিজেকে বাতাসের সঙ্গে তুলনা করে কবি দেখান তিনি নিপীড়কদের নাগালের বাইরে। স্পষ্ট দৈহিক চিত্রকল্প যন্ত্রণাকে বাস্তব করে তোলে, ফলে তাঁর অপরাজিত থাকা আরও জোরালো হয়।"],
-["SAQ 3","2","What does “oil wells pumping in my living room” suggest?","It is a metaphor for hidden wealth and confidence. The speaker walks as if she were rich, with her riches right at home, showing self-worth that no one can take away.","এটি লুকানো ঐশ্বর্য ও আত্মবিশ্বাসের রূপক। কবি এমনভাবে হাঁটেন যেন নিজের ঘরেই সম্পদ উঠছে — তাঁর আত্মমর্যাদা কেউ কেড়ে নিতে পারে না।"],
-["SAQ 4","2","Why does the speaker ask so many questions?","They are rhetorical questions. She does not want answers; she uses them to mock the oppressors and show that their anger only proves her strength.","এগুলি প্রশ্নালংকার। কবি উত্তর চান না; এর মাধ্যমে নিপীড়কদের ব্যঙ্গ করেন এবং দেখান তাদের রাগই তাঁর শক্তির প্রমাণ।"],
-["SAQ 5","2","What does “I am the dream and the hope of the slave” mean?","The speaker sees herself as the fulfilment of her enslaved ancestors’ longing for freedom and dignity. Her rising realises what they hoped for.","কবি নিজেকে ক্রীতদাস পূর্বপুরুষদের মুক্তি ও মর্যাদার স্বপ্নের পূর্ণতা হিসেবে দেখেন। তাঁর উত্থান তাঁদের আশারই সফল রূপ।"],
-["SAQ 6","2","What is the tone of the poem?","Defiant, confident and proud, mixed with mockery and joy, growing into solemn and triumphant in the last two stanzas.","অবাধ্য, আত্মবিশ্বাসী ও গর্বিত; সঙ্গে ব্যঙ্গ ও আনন্দ। শেষ দুই স্তবকে গম্ভীর ও বিজয়োল্লাসী।"],
-["Broad 3","6","How does “Still I Rise” express Black pride and resistance to racism?","The poem moves from personal defiance to collective memory. Stanzas 1–7 answer racist lies, gloom and violence with confidence and laughter. Stanza 8 names the “huts of history’s shame” and “a past that’s rooted in pain”, owning the history of slavery rather than hiding it, and calls the Black people “a black ocean”, a proud, powerful whole. Stanza 9 moves from “nights of terror” to “daybreak”, carrying “the gifts that my ancestors gave”. The speaker refuses shame, the central weapon of racism, and turns heritage into strength. Her final claim, to be “the dream and the hope of the slave”, makes pride a form of resistance.","কবিতাটি ব্যক্তিগত অবাধ্যতা থেকে সমষ্টিগত স্মৃতিতে যায়। ১–৭ স্তবকে বর্ণবাদী মিথ্যা, বিষণ্ণতা ও হিংসার জবাব আত্মবিশ্বাস ও হাসিতে। ৮ম স্তবকে “huts of history’s shame” ও “pain”-এর অতীতকে লুকিয়ে না রেখে গ্রহণ করা হয়, আর কৃষ্ণাঙ্গ জনগোষ্ঠীকে “black ocean”-এর মতো গর্বিত বিশাল শক্তি বলা হয়। ৯ম স্তবকে “terror”-এর রাত থেকে “daybreak”-এ পৌঁছে পূর্বপুরুষদের উপহার বহন করা হয়। বর্ণবাদের প্রধান অস্ত্র লজ্জা — কবি তা প্রত্যাখ্যান করে ঐতিহ্যকে শক্তিতে বদলান। “dream and hope of the slave” দাবি করে গর্বকেই প্রতিরোধ করে তোলেন।"],
+["A2 · Textbook","2","“Does my sassiness upset you? Why are you beset with gloom?” What emotion does the speaker challenge in the listener?","The speaker challenges the oppressor’s gloom and discomfort at her confident, sassy attitude. She forces them to confront why her self-assurance bothers them.","কবি শ্রোতার (নিপীড়কের) বিষণ্ণতা ও অস্বস্তিকে চ্যালেঞ্জ করেন — কেন তাঁর আত্মবিশ্বাসী, তেজি ভঙ্গি তাদের বিচলিত করে।"],
+["A3 · Textbook","2","Explain the metaphor “oil wells pumping in my living room.”","It means the speaker carries an inner wealth of confidence and power, as if she owned productive oil wells at home. Her walk shows that self-worth.","এর মানে কবির অন্তরে আত্মবিশ্বাস ও শক্তির ঐশ্বর্য আছে, যেন বাড়িতেই তেলের কূপ চলছে। তাঁর হাঁটায় সেই আত্মমর্যাদা ফুটে ওঠে।"],
+["A4 · Textbook","2","What does the refrain “I rise” / “Still I’ll rise” achieve?","It acts as a drumbeat of resolve. Repeated after every attack, it turns the poem into a declaration that rising is inevitable no matter what is done to her.","এটি দৃঢ় সংকল্পের ধ্বনি। প্রতিটি আক্রমণের পর পুনরাবৃত্তি করে কবিতাকে ঘোষণায় পরিণত করে — যাই করা হোক, ওঠা অনিবার্য।"],
+["A5 · Textbook","2","How does the speaker’s attitude change in the last two stanzas?","From playful taunting she moves to solemn historical consciousness and collective triumph. She becomes the voice of a whole people rising from slavery.","কৌতুকপূর্ণ ব্যঙ্গ থেকে তিনি ঐতিহাসিক চেতনা ও সমষ্টিগত বিজয়ে পৌঁছান। তিনি হয়ে ওঠেন দাসত্ব থেকে উঠে আসা পুরো জাতির কণ্ঠ।"],
+["B1 · Practice","3","Comment on the use of natural imagery in the poem.","Angelou compares her rising to dust, air, moons, suns and tides — forces that cannot be stopped. The “black ocean” widens this to the collective strength of Black people. Nature becomes a moral ally of the oppressed.","অ্যাঞ্জেলো নিজের ওঠাকে ধুলো, বাতাস, চাঁদ-সূর্য ও জোয়ারের সঙ্গে তুলনা করেন — অপ্রতিরোধ্য শক্তি। “black ocean” এটিকে কৃষ্ণাঙ্গ জাতির সম্মিলিত শক্তিতে বিস্তৃত করে। প্রকৃতি নিপীড়িতের পক্ষে নৈতিক শক্তি হয়ে ওঠে।"],
+["B2 · Practice","3","Discuss the speaker’s treatment of the body and sexuality.","Lines about sassiness, haughtiness and sexiness reclaim a body that stereotypes tried to shame. Joy and sensuality become resistance. The speaker refuses to be reduced to a victim.","সাসিনেস, হটিনেস ও সেক্সিনেস সম্পর্কিত লাইনগুলো সেই শরীরকে ফিরে পায় যা গৎবাঁধা ধারণা লজ্জায় ফেলতে চেয়েছিল। আনন্দ ও আকর্ষণই প্রতিরোধ হয়ে ওঠে। কবি শিকার হতে অস্বীকার করেন।"],
+["B3 · Practice","3","How does structure support the poem’s meaning?","Seven regular quatrains of challenge and defiance give way to longer stanzas of history and hope. The refrain builds to a triple “I rise,” mirroring the movement from personal defiance to collective triumph.","সাতটি নিয়মিত চতুষ্পদী চ্যালেঞ্জ ও প্রতিরোধের পর দীর্ঘতর স্তবকে ইতিহাস ও আশা আসে। ধ্রুবপদ তিনবার “I rise”-এ পৌঁছে ব্যক্তিগত প্রতিরোধ থেকে সমষ্টিগত বিজয়ের যাত্রা প্রতিফলিত করে।"],
+["Broad 1","6","How does Maya Angelou use the refrain and other devices to convey resilience?","The refrain “I rise” / “Still I’ll rise” is the poem’s heartbeat. After every image of oppression — lies, dirt, broken body, words, eyes, hatefulness — the same answer returns. Anaphora (“You may…”) piles up the attacks; similes (dust, air, moons, tides) make rising seem natural and certain; the final triple refrain turns personal defiance into a collective anthem. Together these devices make resilience not a hope but a fact.","ধ্রুবপদ “I rise” / “Still I’ll rise” কবিতার হৃদস্পন্দন। মিথ্যা, ধুলো, ভাঙা শরীর, কথা, চাহনি, ঘৃণা — প্রতিটি নিপীড়নের পর একই উত্তর ফেরে। অনুপ্রাস (“You may…”) আক্রমণ জমা করে; উপমা (ধুলো, বাতাস, চাঁদ, জোয়ার) ওঠাকে স্বাভাবিক ও নিশ্চিত করে; শেষের তিনবারের ধ্রুবপদ ব্যক্তিগত প্রতিরোধকে সমষ্টিগত গানে পরিণত করে। মিলে সহনশীলতাকে আশা নয়, সত্য করে তোলে।"],
+["Broad 2","6","Examine the shift from the personal to the collective in “Still I Rise.”","In the first seven stanzas the speaker is one confident woman addressing “you.” She flaunts her walk, her laugh, her body. From stanza 8 the voice widens: “Out of the huts of history’s shame / I rise.” She becomes “a black ocean” and finally “the dream and the hope of the slave.” The personal “I” absorbs the history and hope of a whole people. The poem moves from individual pride to communal rising.","প্রথম সাত স্তবকে বক্তা একজন আত্মবিশ্বাসী নারী, “you”-কে সম্বোধন করেন। তাঁর হাঁটা, হাসি, দেহ — সবই ব্যক্তিগত। অষ্টম স্তবক থেকে কণ্ঠ প্রসারিত হয়: “Out of the huts of history’s shame / I rise।” তিনি হয়ে ওঠেন “black ocean” এবং শেষে “dream and hope of the slave।” ব্যক্তিগত “I” পুরো জাতির ইতিহাস ও আশা গ্রহণ করে। কবিতা ব্যক্তিগত গর্ব থেকে সমষ্টিগত উত্থানে যায়।"],
+["Broad 3","6","Discuss how history and memory function in the poem.","History appears as “history’s shame” — the huts of slavery — and as a past “rooted in pain.” The speaker does not deny this past; she rises out of it. Memory of ancestors’ gifts and the “dream and hope of the slave” turn suffering into strength. The movement from “nights of terror” to “daybreak” carries the gifts of the past into a clear future. Racism’s main weapon is shame; the poet rejects it and converts heritage into power.","ইতিহাস আসে “history’s shame” — দাসত্বের কুঁড়েঘর — এবং “rooted in pain” অতীত হিসেবে। কবি এই অতীত অস্বীকার করেন না; তিনি তার থেকে উঠে দাঁড়ান। পূর্বপুরুষদের উপহার ও “dream and hope of the slave”-এর স্মৃতি যন্ত্রণাকে শক্তিতে বদলায়। “nights of terror” থেকে “daybreak”-এ পৌঁছে পূর্বপুরুষদের উপহার বহন করা হয়। বর্ণবাদের প্রধান অস্ত্র লজ্জা — কবি তা প্রত্যাখ্যান করে ঐতিহ্যকে শক্তিতে বদলান। “dream and hope of the slave” দাবি করে গর্বকেই প্রতিরোধ করে তোলেন।"],
 ["Broad 4","6","Discuss the use of natural imagery and similes in the poem.","Angelou compares her rising to dust, air, moons and suns, tides and an ocean. All of these are natural, repeating and unstoppable. Dust and air cannot be crushed or killed; moons and suns set and rise again; tides return every day. The similes make her rise seem not just an act of will but a law of nature. The “black ocean” widens the picture: her community is as vast and unstoppable as the sea. Set against the cruelty of men, nature becomes a moral force on the side of the oppressed.","অ্যাঞ্জেলো নিজের ওঠাকে ধুলো, বাতাস, চাঁদ-সূর্য, জোয়ার ও মহাসাগরের সঙ্গে তুলনা করেন। সবই প্রাকৃতিক, চক্রাকার ও অপ্রতিরোধ্য। ধুলো-বাতাসকে পিষে বা হত্যা করা যায় না; চাঁদ-সূর্য অস্ত যায়, আবার ওঠে; জোয়ার রোজ ফেরে। ফলে তাঁর উত্থান শুধু ইচ্ছাশক্তি নয়, প্রকৃতির নিয়ম বলে মনে হয়। “black ocean” ছবিটিকে বড় করে — তাঁর জনগোষ্ঠী সাগরের মতো বিশাল ও অদম্য। মানুষের নিষ্ঠুরতার বিপরীতে প্রকৃতি নিপীড়িতের পক্ষে নৈতিক শক্তি হয়ে ওঠে।"],
 ["Broad 5","6","Justify the title “Still I Rise”.","“Still” means “even so”: after lies, humiliation, hatred and a painful past, the speaker rises anyway. The title is also the refrain, so it is the main message of the poem. “Rise” has several senses: physical standing up, rising in dignity, rising from slavery to freedom, and rising like the sun at daybreak. The title is a statement of fact, not a request, so it shows total confidence. It sums up the poem’s movement from oppression to hope and is therefore apt.","“Still” মানে “তবুও”: মিথ্যা, অপমান, ঘৃণা ও যন্ত্রণার অতীত সত্ত্বেও কবি উঠে দাঁড়ান। শিরোনামই ধ্রুবপদ, তাই এটিই কবিতার মূল বার্তা। “Rise”-এর কয়েকটি অর্থ: শারীরিকভাবে দাঁড়ানো, মর্যাদায় ওঠা, দাসত্ব থেকে মুক্তিতে ওঠা, আর ভোরে সূর্যের উদয়। শিরোনামটি অনুরোধ নয়, ঘোষণা — পূর্ণ আত্মবিশ্বাসের প্রকাশ। নিপীড়ন থেকে আশায় কবিতার যাত্রাকে এটি ধরে রাখে, তাই যথার্থ।"]];
 document.getElementById('qs').innerHTML=Q.map(q=>'<details><summary>'+q[0]+'<i>'+q[1]+' marks</i><br><span class="en">'+q[2]+'</span></summary><div class="ans"><p class="en"><b>Answer:</b> '+q[3]+'</p><p class="bn"><b>উত্তর:</b> '+q[4]+'</p></div></details>').join('');
+
+/* Human voice (Web Speech API) */
+(function(){
+  const btn = document.getElementById('ttsBtn');
+  const label = document.getElementById('ttsLabel');
+  const icon = document.getElementById('ttsIcon');
+  const status = document.getElementById('ttsStatus');
+  if(!btn || !('speechSynthesis' in window)){
+    if(btn){ btn.style.display='none'; }
+    return;
+  }
+  let speaking = false;
+  let preferredVoice = null;
+
+  function pickVoice(){
+    const voices = speechSynthesis.getVoices();
+    // Prefer natural-sounding female English voices
+    const prefs = [
+      v => /en-US|en_US/i.test(v.lang) && /female|samantha|zira|google.*us|jenny|aria|natasha|susan/i.test(v.name),
+      v => /en-GB|en_GB/i.test(v.lang) && /female|serena|google.*uk|karen|moira/i.test(v.name),
+      v => /en/i.test(v.lang) && /female|woman|girl/i.test(v.name),
+      v => /en-US|en_US/i.test(v.lang) && !/male|david|mark|daniel|alex/i.test(v.name),
+      v => /en/i.test(v.lang)
+    ];
+    for(const test of prefs){
+      const found = voices.find(test);
+      if(found){ preferredVoice = found; break; }
+    }
+    if(!preferredVoice && voices.length) preferredVoice = voices[0];
+  }
+  pickVoice();
+  speechSynthesis.onvoiceschanged = pickVoice;
+
+  function poemText(){
+    // Full English poem text for natural reading
+    return P.map(st => st.join(' ')).join('\n\n');
+  }
+
+  function setUI(isPlaying){
+    speaking = isPlaying;
+    btn.classList.toggle('playing', isPlaying);
+    label.textContent = isPlaying ? 'Stop reading' : 'Listen to poem';
+    icon.innerHTML = isPlaying
+      ? '<path d="M6 6h4v12H6zm8 0h4v12h-4z"/>'
+      : '<path d="M8 5v14l11-7z"/>';
+    status.textContent = isPlaying
+      ? (preferredVoice ? 'Voice: ' + preferredVoice.name.split(' ')[0] : 'Reading…')
+      : '';
+  }
+
+  function stop(){
+    speechSynthesis.cancel();
+    setUI(false);
+  }
+
+  function speak(){
+    stop();
+    const u = new SpeechSynthesisUtterance(poemText());
+    u.lang = 'en-US';
+    u.rate = 0.92;
+    u.pitch = 1.05;
+    u.volume = 1;
+    if(preferredVoice) u.voice = preferredVoice;
+    u.onstart = () => setUI(true);
+    u.onend = () => setUI(false);
+    u.onerror = () => setUI(false);
+    speechSynthesis.speak(u);
+  }
+
+  btn.addEventListener('click', () => {
+    if(speaking) stop();
+    else speak();
+  });
+
+  // Stop speech when leaving the poem section
+  document.querySelectorAll('nav button').forEach(b => {
+    b.addEventListener('click', () => {
+      if(b.dataset.t !== 'poem') stop();
+    });
+  });
+})();
+
 if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 </script></body></html>
